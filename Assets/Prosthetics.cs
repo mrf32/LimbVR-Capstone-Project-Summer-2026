@@ -54,8 +54,8 @@ public class Prosthetics : MonoBehaviour
         // Keyboard addings
         float translation = Input.GetAxis("Vertical") * speed;
         float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
-        Debug.Log(translation);
-        Debug.Log(rotation);
+        //Debug.Log(translation);
+        //Debug.Log(rotation);
 
         gameTimer -= Time.deltaTime;
         timer += Time.deltaTime;
@@ -80,7 +80,7 @@ public class Prosthetics : MonoBehaviour
             float.TryParse(output[3], out vlxFloat4);
         }
 
-        Debug.Log(vlxFloat1);
+        //Debug.Log(vlxFloat1);
 
         //target.transform.position = new Vector3(vlxFloat1, 0, vlxFloat2);
 
