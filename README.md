@@ -1,12 +1,18 @@
 # LimbVR – Upper-Limb Prosthetic Rehabilitation Simulator
 
-## Overview
 
-LimbVR is a Unity-based capstone project focused on improving upper-limb prosthetic rehabilitation through an interactive virtual environment.
+LimbVR is a Unity-based senior capstone project focused on improving upper-limb prosthetic rehabilitation through an interactive virtual environment.
 
-The project simulates an upper-limb prosthetic hand performing object manipulation tasks while integrating external sensor data from a wearable prosthetic system. The long-term objective is to provide clinicians and researchers with a platform for evaluating prosthetic control strategies, collecting rehabilitation metrics, and improving patient outcomes.
+The application integrates external sensor data from a wearable prosthetic system with a Unity simulation, allowing users to perform object manipulation tasks while collecting rehabilitation performance metrics. The project serves as a research and development platform for evaluating prosthetic control strategies, virtual rehabilitation exercises, and data collection workflows.
 
-This repository contains the Unity application responsible for visualization, gameplay, hardware communication, and data collection.
+This repository contains the Unity application responsible for:
+
+- Virtual rehabilitation environment
+- Prosthetic hand interaction
+- Serial communication with external hardware
+- Gameplay and scoring
+- Performance data logging
+- Research prototype development
 
 ---
 
@@ -14,15 +20,13 @@ This repository contains the Unity application responsible for visualization, ga
 
 ## Prerequisites
 
-Before opening the project, ensure you have the following installed:
+Before opening the project, install:
 
-- Unity 6 (or the version specified by the project)
-- Unity Hub
+- **Unity Hub**
+- **Unity Editor 6000.0.41f1**
 - Git
-- Visual Studio 2022 or JetBrains Rider with Unity support
+- Visual Studio 2022 (or JetBrains Rider) with Unity support
 - Windows (required for the current serial communication implementation)
-
----
 
 ## Clone the Repository
 
@@ -30,289 +34,190 @@ Before opening the project, ensure you have the following installed:
 git clone https://github.com/mrf32/LimbVR-Capstone-Project-Summer-2026.git
 ```
 
----
-
 ## Open the Project
 
-1. Open **Unity Hub**.
+1. Open Unity Hub.
 2. Click **Add Project**.
 3. Select the cloned repository.
-4. Open the project using the recommended Unity version.
-5. Allow Unity to import all assets and packages.
+4. Open it using **Unity 6000.0.41f1**.
+5. Allow Unity to import all assets and restore project packages.
 
-> **Note:** The first import may take several minutes while Unity generates the `Library` folder and imports all assets.
+> The initial import may take several minutes while Unity generates the Library folder.
 
----
-
-## Required Unity Packages
-
-Unity automatically restores all required packages from:
-
-- `Packages/manifest.json`
-- `Packages/packages-lock.json`
-
-No additional package installation should be necessary.
-
----
-
-## Hardware Configuration
-
-The current prototype communicates with external hardware using serial communication.
-
-Default configuration:
-
-| Setting | Value |
-|----------|-------|
-| Serial Port | COM3 |
-| Baud Rate | 115200 |
-
-If using a different serial device, update the serial port inside the project accordingly.
-
-The project can also be tested without external hardware using the built-in keyboard controls.
-
----
-
-## Running the Project
+## Running the Prototype
 
 1. Open the primary gameplay scene.
-2. Press **Play** in the Unity Editor.
-3. Move the virtual prosthetic hand.
-4. Grasp the object.
-5. Transport it into the green scoring area.
-6. Continue until the session timer expires.
+2. Press **Play**.
+3. If hardware is connected, verify the serial connection.
+4. If no hardware is connected, use the keyboard controls for testing.
+
+Current keyboard controls:
+
+- **W / S** – Move target
+- **A / D** – Move target
+- **Space** – Activate grasp
 
 ---
 
-# Project Objectives
 
-The current prototype allows participants to:
+# LimbVR Current Code Overview
 
-- Control a virtual prosthetic hand
-- Receive real-time input from external sensors
-- Grasp virtual objects
-- Complete object placement tasks
-- Receive performance feedback through scoring
-- Record rehabilitation session data
-- Evaluate prosthetic interaction performance
+## 1. Project Purpose
 
-This Unity application serves as the software component of the LimbVR capstone project.
+This Unity prototype implements a simple upper-limb rehabilitation task:
 
----
+1. The user moves a virtual prosthetic hand toward a ball.
+2. The hand grasps the ball when the grasp input is active and the hand is inside the ball's grasp area.
+3. The user moves the ball into the green target area.
+4. A successful placement should add exactly one point.
+5. The ball should then reappear at another location.
+6. The session ends when the game timer reaches zero.
 
-# Current Gameplay
+The current code package contains three C# scripts:
 
-Each rehabilitation session follows this workflow:
+- `Prosthetics.cs`
+- `Object.cs`
+- `TrashCan.cs`
 
-1. Move the prosthetic hand toward the virtual ball.
-2. Enter the object's grasp region.
-3. Activate the grasp input.
-4. Pick up the object.
-5. Move the object into the green target area.
-6. Earn one point for a successful placement.
-7. Spawn the next object.
-8. Repeat until the session timer reaches zero.
+## 2. Script Responsibilities
 
----
+### `Prosthetics.cs`
 
-# Features
+This is the main controller and game-management script.
 
-Current functionality includes:
+It currently handles:
 
-- Unity-based rehabilitation environment
-- Serial communication with external hardware
-- Real-time sensor data acquisition
-- Keyboard testing controls
-- Virtual prosthetic hand movement
-- Object grasp detection
-- Object placement scoring
-- Session timer
-- Random object spawning
-- Performance data logging
-- Score tracking
-- User interface displaying score and timer
+- Serial communication through `COM3` at `115200` baud.
+- Parsing four comma-separated sensor values.
+- Keyboard-based test control.
+- Movement of the assigned `target` object.
+- Movement of the assigned `robot` object toward the target.
+- Grasp-state calculation.
+- Game timer and score display.
+- Score calculation.
+- Random object placement and prefab spawning.
+- Logging sensor values, time, and score to a text file.
 
----
+Important public references that must be assigned in the Unity Inspector:
 
-# Project Structure
+- `robot`
+- `target`
+- `Script`
+- `Script2`
+- `spherePrefab`
+- `timerText`
+- `scoreText`
 
+Current keyboard controls:
+
+- Vertical axis: translates the target.
+- Horizontal axis: moves the target on another axis.
+- Space bar: activates the grasp input.
+
+The serial sensor values are stored as:
+
+- `vlxFloat1`
+- `vlxFloat2`
+- `vlxFloat3`
+- `vlxFloat4`
+
+### `Object.cs`
+
+This script detects whether the prosthetic hand is inside the object's grasp region.
+
+Behavior:
+
+- When a collider tagged `Prosthetics` remains inside the trigger, `stayInGraspDomain` becomes `1`.
+- When that collider exits, `stayInGraspDomain` becomes `0`.
+
+### `TrashCan.cs`
+
+This script detects whether an object is inside the green scoring area.
+
+Behavior:
+
+- When a collider tagged `Object` enters the trigger, `InTrashCan` becomes `true`.
+- When it exits, `InTrashCan` becomes `false`.
+
+## 3. Current Gameplay Logic
+
+The current grasp logic is approximately:
+
+```text
+Grasp input active
++ prosthetic hand inside the object's grasp domain
+= graspStatus true
 ```
-LimbVR/
-│
-├── Assets/
-│   ├── Scripts/
-│   │   ├── Prosthetics.cs
-│   │   ├── Object.cs
-│   │   └── TrashCan.cs
-│   │
-│   ├── Prefabs/
-│   ├── Scenes/
-│   ├── Materials/
-│   ├── Models/
-│   ├── Textures/
-│   └── UI/
-│
-├── Packages/
-├── ProjectSettings/
-├── .gitignore
-├── .gitattributes
-└── README.md
+
+When grasping is active and the hand is in range, the assigned `robot` GameObject moves toward the assigned `target` position using `Vector3.MoveTowards()`.
+
+The current scoring condition is:
+
+```csharp
+if (Script2.InTrashCan && vlxFloat4 < 60 && gameTimer > 0f)
 ```
 
----
+When this condition is true, the code:
 
-# Core Scripts
+1. Moves the assigned `robot` to a random position.
+2. Adds one point.
+3. Creates another sphere from `spherePrefab` at a random position.
 
-## Prosthetics.cs
+## 4. Confirmed Scoring Bug
 
-Primary controller responsible for:
+### Symptom
 
-- Game management
-- Serial communication
-- Sensor parsing
-- Target movement
-- Robot movement
-- Grasp state management
-- Score calculation
-- Session timer
-- Random object spawning
-- Performance data logging
+One ball placement can sometimes add several points and create several balls, even though each placement should add only one point.
 
----
+### Direct Cause
 
-## Object.cs
+The scoring code is inside Unity's `Update()` method, which runs once per rendered frame.
 
-Determines whether the prosthetic hand is inside an object's grasp region.
+`TrashCan.InTrashCan` remains `true` for as long as an object stays inside the green trigger area.
 
-This information is used by the game manager to determine whether an object can be picked up.
+## 5. Recommended Fix
 
----
+The scoring event should occur once when a valid ball first enters the green area rather than being checked continuously every frame.
 
-## TrashCan.cs
+Conceptual flow:
 
-Detects when an object enters the scoring area.
+```text
+Ball enters green trigger
+        ↓
+OnTriggerEnter fires once
+        ↓
+Validate ball and game state
+        ↓
+Add one point
+        ↓
+Remove or reposition that ball
+        ↓
+Create or activate one new ball
+```
 
-Successful placement events are reported back to the game manager for score calculation.
+## 6. Other Technical Notes
 
----
+- Prefer `&&` over `&` for Boolean conditions.
+- Avoid blocking `serial.ReadLine()` directly inside `Update()`.
+- Validate serial array lengths before indexing.
+- Buffer or rate-limit file logging.
+- Make COM port, baud rate, and output path configurable.
+- Clamp the timer at zero after expiration.
 
-# Controls
+## 7. Unity Setup Checklist
 
-## Keyboard Controls (Development & Testing)
+Verify that:
 
-| Key | Action |
-|------|--------|
-| W / S | Move target |
-| A / D | Move target |
-| Space | Activate grasp |
+- The scoring area collider has **Is Trigger** enabled.
+- At least one object has a Rigidbody.
+- The ball is tagged `Object`.
+- The prosthetic collider is tagged `Prosthetics`.
+- Inspector references are assigned correctly.
+- `spherePrefab` is configured correctly.
+- Spawn locations do not overlap the scoring area.
 
-These controls are intended primarily for testing while hardware integration is being refined.
+## 8. Current Conclusion
 
----
+The primary confirmed issue is that the score-and-spawn logic executes every frame inside `Update()` while `InTrashCan` remains true.
 
-# Data Logging
-
-During gameplay, the application records:
-
-- Sensor values
-- Session time
-- Player score
-
-The collected data is written to a text file for later analysis and research.
-
----
-
-# Unity Scene Requirements
-
-Before running the project, verify the following:
-
-- The green scoring area has a Collider with **Is Trigger** enabled.
-- At least one interacting object contains a Rigidbody.
-- Ball objects are tagged **Object**.
-- Prosthetic hand colliders are tagged **Prosthetics**.
-- Required Inspector references have been assigned.
-- The correct scene is loaded.
-- The serial device is connected (if using external hardware).
-
----
-
-# Git Repository
-
-This project uses standard Unity version control practices.
-
-Tracked files include:
-
-- Assets
-- Packages
-- ProjectSettings
-- Source code
-- Prefabs
-- Scenes
-- Materials
-- Textures
-- Models
-
-The repository excludes Unity-generated files through `.gitignore`, including:
-
-- Library/
-- Temp/
-- Logs/
-- Obj/
-- Build/
-- Builds/
-- UserSettings/
-
-The repository also includes a `.gitattributes` file to ensure consistent line endings across development environments.
-
----
-
-# Known Limitations
-
-The current prototype is under active development.
-
-Areas planned for improvement include:
-
-- Event-based scoring system
-- Improved object lifecycle management
-- Safer serial communication
-- Configurable hardware settings
-- Improved data logging efficiency
-- Better error handling
-- Code refactoring
-- Expanded rehabilitation exercises
-- Additional gameplay mechanics
-- Improved UI and user experience
-
----
-
-# Future Development
-
-Planned features include:
-
-- Full prosthetic hardware integration
-- VR headset support
-- Improved grasp mechanics
-- Multiple rehabilitation exercises
-- Performance analytics dashboard
-- Configurable rehabilitation sessions
-- Cloud-based data storage
-- Expanded clinician tools
-- Improved object interaction physics
-- Research-focused data visualization
-
----
-
-# Development Team
-
-**LimbVR**
-
-Summer 2026 Senior Capstone Project
-
-Developed as part of a multidisciplinary effort to explore virtual reality applications for upper-limb prosthetic rehabilitation.
-
----
-
-# License
-
-This repository is part of an academic senior capstone project.
-
-Licensing and distribution terms will be determined upon project completion.
+The next revision should move scoring to an event-driven approach using `OnTriggerEnter()`, identify the exact ball that triggered the score, and ensure that only one ball is removed or spawned per successful placement.
