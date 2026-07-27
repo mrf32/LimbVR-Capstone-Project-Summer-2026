@@ -24,7 +24,7 @@ public class Prosthetics : MonoBehaviour
     public int Score =0;
     public bool graspStatusRef = false;
     public bool graspStatusChange = false;
-    public string pathName = @"C:\Users\zhipe\Desktop\DataOutput.txt";
+    public string pathName = @".\logs\DataOutput.txt";
     //public GameObject dataObject;
     public float timer = 0;
 
@@ -32,7 +32,7 @@ public class Prosthetics : MonoBehaviour
 
     public Text timerText; // Reference to our Unity Text
     public Text scoreText; // Reference to our Unity Text
-    public float gameTimer = 60f; //30 seconds for game timer
+    public float gameTimer = 240f; //2 mins for game timer
 
     // Keyboard addings
     public float sspeed = 10.0f;
@@ -89,7 +89,7 @@ public class Prosthetics : MonoBehaviour
         rotation *= Time.deltaTime;
 
         // Move translation along the object's z-axis
-        target.transform.Translate(translation, 0, 0);
+        target.transform.Translate(0, 0, -translation);
 
         // Rotate around our y-axis
         // transform.Rotate(0, rotation, 0);
@@ -164,6 +164,7 @@ public class Prosthetics : MonoBehaviour
         {
             string output = string.Format("{0},{1},{2},{3}", timer, vlxFloat3,vlxFloat4, Score);
             file.WriteLine(output);
+            file.Close();
         }
     }
 }
