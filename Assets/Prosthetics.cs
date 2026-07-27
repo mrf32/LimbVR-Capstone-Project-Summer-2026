@@ -36,7 +36,7 @@ public class Prosthetics : MonoBehaviour
 
     // Keyboard addings
     public float sspeed = 10.0f;
-    public float rotationSpeed = 10.0f;
+    public float rotationSpeed = 0.01f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -52,8 +52,9 @@ public class Prosthetics : MonoBehaviour
     void Update()
     {
         // Keyboard addings
-        float translation = Input.GetAxis("Vertical") * speed;
-        float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
+        float translation_v = Input.GetAxis("Vertical") * speed;
+        float translation_h = Input.GetAxis("Horizontal") * speed;
+        float rotation = Input.GetAxis("Rotational") * rotationSpeed;
         //Debug.Log(translation);
         //Debug.Log(rotation);
 
@@ -85,16 +86,18 @@ public class Prosthetics : MonoBehaviour
         //target.transform.position = new Vector3(vlxFloat1, 0, vlxFloat2);
 
         // Make it move 10 meters per second instead of 10 meters per frame...
-        translation *= Time.deltaTime;
-        rotation *= Time.deltaTime;
+        translation_v *= Time.deltaTime;
+        translation_h *= Time.deltaTime;
+        //rotation *= Time.deltaTime;
 
         // Move translation along the object's z-axis
-        target.transform.Translate(0, 0, -translation);
+        target.transform.Translate(0, 0, -translation_v);
+        target.transform.Translate(0, translation_h, 0);
 
         // Rotate around our y-axis
-        // transform.Rotate(0, rotation, 0);
-        target.transform.Translate(0, rotation, 0);
-        
+        transform.Rotate(0, 0, rotation);
+
+
 
         // Debug.Log(Score);
 
