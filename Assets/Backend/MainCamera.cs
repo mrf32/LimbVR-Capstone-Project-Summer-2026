@@ -1,22 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System.Net;
-using System.Net.Sockets;
-using System.Linq;
 using System;
-using System.IO;
-using System.Text;
+using UnityEngine;
 
-public class Joint1_1 : MonoBehaviour
+public class MainCamera : MonoBehaviour
 {
-    // Start is called before the first frame update
-    String finger_1_msg;
     public int speed = 200;
     public float angle;
     public Prosthetics Script;
 
-
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
@@ -25,11 +16,9 @@ public class Joint1_1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-        if (Script.isMoving ==1)
+        if (Script.isMoving == 1)
         {
-            if (angle <= (60- 0.01f * speed))
+            if (angle <= (60 - 0.01f * speed))
             {
                 angle += 0.01f * speed;
             }
@@ -40,14 +29,12 @@ public class Joint1_1 : MonoBehaviour
 
         if (Script.isMoving == 0)
         {
-            if (angle > (0+ 0.01f * speed))
+            if (angle > (0 + 0.01f * speed))
             {
                 angle -= 0.01f * speed;
             }
 
-            transform.localRotation = Quaternion.Euler(-1 * angle,0f, 0f);
+            transform.localRotation = Quaternion.Euler(-1 * angle, 0f, 0f);
         }
-
     }
 }
-
