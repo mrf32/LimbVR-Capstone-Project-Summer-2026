@@ -98,15 +98,7 @@ public class Prosthetics : MonoBehaviour
         target.transform.Translate(0, translation_h, 0);
 
         // Rotate around our y-axis
-        if (visualMeshChild != null)
-        {
-            visualMeshChild.Rotate(0, -rotation, 0);
-        }
-        else
-        {
-            // Fallback if you forget to assign the variable in the inspector
-            transform.Rotate(0, 0, rotation);
-        }
+        visualMeshChild.Rotate(0, -rotation, 0);
 
 
 
