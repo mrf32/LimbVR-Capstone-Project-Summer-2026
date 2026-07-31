@@ -4,8 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class HUDManager : MonoBehaviour
 {
-    //Object Variables & Contorllers
-    [Header ("Gameplay HUD Elements")]
+    //Object Variables & Controllers
+    [Header("Gameplay HUD Elements")]
+
+    public GameObject startScreenContainer;
     public GameObject gameplayHUDContainer;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI scoreText;
@@ -16,14 +18,16 @@ public class HUDManager : MonoBehaviour
     public TextMeshProUGUI backendStatsText;
 
     //Local variables for timer and state
-    private float timeRemaining = 120f;
+    private float timeRemaining = 121f;
     private int currentScore = 0;
-    private bool isGameActive = true;
+    private bool isGameActive = false;
 
     void Start()
     {
         //On startup sets the correct screen to display and reset score counter
-        gameplayHUDContainer.SetActive(true);
+
+        startScreenContainer.SetActive(true);
+        gameplayHUDContainer.SetActive(false);
         resultScreenContainer.SetActive(false);
 
         UpdateScoreDisplay();
@@ -31,7 +35,7 @@ public class HUDManager : MonoBehaviour
 
     void Update()
     {
-        /* Test code 'Space' to instantly end and 'S' to increase score
+        /*Test code 'Space' to instantly end and 'S' to increase score
         if(isGameActive && Input.GetKeyDown(KeyCode.Space))
         {
             EndSession();
@@ -43,7 +47,7 @@ public class HUDManager : MonoBehaviour
         }
         */
 
-        if (!isGameActive) return;
+        if (!isGameActive) return; //Prevents timer from starting 
 
         //Timer and end of timer state change
         if (timeRemaining > 0)
@@ -57,6 +61,15 @@ public class HUDManager : MonoBehaviour
             UpdateTimerDisplay(timeRemaining);
             EndSession();
         }
+    }
+
+    //Start Game Button
+    public void StartGame()
+    {
+        isGameActive  = true;
+
+        startScreenContainer.SetActive(false);
+        gameplayHUDContainer.SetActive(true);
     }
 
     //Score
@@ -103,10 +116,12 @@ public class HUDManager : MonoBehaviour
     */
 
     //Button Function to restart game
+
     public void RestartGame()
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
     }
+
 
 }
