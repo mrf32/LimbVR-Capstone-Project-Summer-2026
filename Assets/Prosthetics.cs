@@ -7,6 +7,23 @@ using System.IO.Ports;
 
 public class Prosthetics : MonoBehaviour
 {
+    private readonly KeyCode[] loggingKeys = new KeyCode[]
+    {
+        KeyCode.Space,
+        KeyCode.W,
+        KeyCode.A,
+        KeyCode.S,
+        KeyCode.D,
+        KeyCode.UpArrow,
+        KeyCode.DownArrow,
+        KeyCode.LeftArrow,
+        KeyCode.RightArrow,
+        KeyCode.Q,
+        KeyCode.E,
+        KeyCode.F,
+        KeyCode.G
+    };
+
     public SerialPort serial = new SerialPort("\\\\.\\COM3", 115200);
     private string vlxstring;
     public float vlxFloat1, vlxFloat2, vlxFloat3, vlxFloat4;
@@ -24,7 +41,7 @@ public class Prosthetics : MonoBehaviour
     public int Score =0;
     public bool graspStatusRef = false;
     public bool graspStatusChange = false;
-    public string pathName = @"C:\Users\zhipe\Desktop\DataOutput.txt";
+    public string pathName = @"Assets/logs/DataOutput.txt";
     //public GameObject dataObject;
     public float timer = 0;
 
@@ -32,11 +49,14 @@ public class Prosthetics : MonoBehaviour
 
     public Text timerText; // Reference to our Unity Text
     public Text scoreText; // Reference to our Unity Text
-    public float gameTimer = 60f; //30 seconds for game timer
+    public float gameTimer = 240f; //2 mins for game timer
 
     // Keyboard addings
     public float sspeed = 10.0f;
-    public float rotationSpeed = 10.0f;
+    public float rotationSpeed = 0.01f;
+
+    [Header("Visual Assignments")]
+    public Transform visualMeshChild;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -52,8 +72,9 @@ public class Prosthetics : MonoBehaviour
     void Update()
     {
         // Keyboard addings
-        float translation = Input.GetAxis("Vertical") * speed;
-        float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
+        float translation_v = Input.GetAxis("Vertical") * speed;
+        float translation_h = Input.GetAxis("Horizontal") * speed;
+        float rotation = Input.GetAxis("Rotational") * rotationSpeed;
         //Debug.Log(translation);
         //Debug.Log(rotation);
 
@@ -85,16 +106,18 @@ public class Prosthetics : MonoBehaviour
         //target.transform.position = new Vector3(vlxFloat1, 0, vlxFloat2);
 
         // Make it move 10 meters per second instead of 10 meters per frame...
-        translation *= Time.deltaTime;
-        rotation *= Time.deltaTime;
+        translation_v *= Time.deltaTime;
+        translation_h *= Time.deltaTime;
+        //rotation *= Time.deltaTime;
 
         // Move translation along the object's z-axis
-        target.transform.Translate(translation, 0, 0);
+        target.transform.Translate(0, 0, -translation_v);
+        target.transform.Translate(0, translation_h, 0);
 
         // Rotate around our y-axis
-        // transform.Rotate(0, rotation, 0);
-        target.transform.Translate(0, rotation, 0);
-        
+        visualMeshChild.Rotate(0, -rotation, 0);
+
+
 
         // Debug.Log(Score);
 
@@ -144,6 +167,8 @@ public class Prosthetics : MonoBehaviour
             Instantiate(spherePrefab, randomSpawnPosition, Quaternion.identity);
         }
 
+        CheckLoggingInput();
+
         if (gameTimer > 0f)
         {
             timerText.text = "Time Left: " + Mathf.Floor(gameTimer);
@@ -158,12 +183,31 @@ public class Prosthetics : MonoBehaviour
 
 
     }
+    void CheckLoggingInput()
+    {
+        foreach (KeyCode key in loggingKeys)
+        {
+            if (Input.GetKeyDown(key))
+            {
+                writeData();
+                return;
+            }
+        }
+    }
+
     void writeData()
     {
+        string directoryName = Path.GetDirectoryName(pathName);
+        if (!string.IsNullOrEmpty(directoryName))
+        {
+            Directory.CreateDirectory(directoryName);
+        }
+
         using (StreamWriter file = new StreamWriter(pathName, true))
         {
             string output = string.Format("{0},{1},{2},{3}", timer, vlxFloat3,vlxFloat4, Score);
             file.WriteLine(output);
+            file.Close();
         }
     }
 }

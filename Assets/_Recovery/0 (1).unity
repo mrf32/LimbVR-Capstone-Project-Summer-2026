@@ -171,7 +171,7 @@ MonoBehaviour:
   Score: 0
   graspStatusRef: 0
   graspStatusChange: 0
-  pathName: Assets/logs/DataOutput.txt
+  pathName: C:\Users\zhipe\Desktop\DataOutput.txt
   timer: 0
   spherePrefab: {fileID: 4086922989383275927, guid: 2ce344e73c4359040868c528a04b260d, type: 3}
   timerText: {fileID: 1992096001}
