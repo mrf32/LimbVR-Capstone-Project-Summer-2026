@@ -55,6 +55,9 @@ public class Prosthetics : MonoBehaviour
     public float sspeed = 10.0f;
     public float rotationSpeed = 0.01f;
 
+    [Header("Visual Assignments")]
+    public Transform visualMeshChild;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -112,7 +115,7 @@ public class Prosthetics : MonoBehaviour
         target.transform.Translate(0, translation_h, 0);
 
         // Rotate around our y-axis
-        transform.Rotate(0, 0, rotation);
+        visualMeshChild.Rotate(0, -rotation, 0);
 
 
 
