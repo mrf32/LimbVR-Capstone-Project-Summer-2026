@@ -11,6 +11,7 @@ public class HUDManager : MonoBehaviour
     public GameObject gameplayHUDContainer;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI scoreText;
+    public Animator animator;
 
     [Header("Result Screen HUD Elements")]
     public GameObject resultScreenContainer;
@@ -29,7 +30,8 @@ public class HUDManager : MonoBehaviour
         startScreenContainer.SetActive(true);
         gameplayHUDContainer.SetActive(false);
         resultScreenContainer.SetActive(false);
-
+        animator = GetComponent<Animator>();
+        animator.SetInteger("State", 0);
         UpdateScoreDisplay();
     }
 
