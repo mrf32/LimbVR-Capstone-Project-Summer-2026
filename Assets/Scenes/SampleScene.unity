@@ -166,8 +166,8 @@ MonoBehaviour:
   speed: 3
   isMoving: 0
   graspStatus: 0
-  Script: {fileID: 1143860556}
-  Script2: {fileID: 1529736352}
+  Object: {fileID: 1143860556}
+  Door: {fileID: 0}
   Score: 0
   graspStatusRef: 0
   graspStatusChange: 0
@@ -179,6 +179,7 @@ MonoBehaviour:
   gameTimer: 60
   sspeed: 10
   rotationSpeed: 10
+  visualMeshChild: {fileID: 232327823}
 --- !u!54 &232327820
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -229,6 +230,11 @@ CapsuleCollider:
   m_Height: 0.65
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &232327823 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400054, guid: 49205c1c29fb4534fb87b17b62acbade, type: 3}
+  m_PrefabInstance: {fileID: 1389333210}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0

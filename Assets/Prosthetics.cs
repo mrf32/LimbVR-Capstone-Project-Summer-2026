@@ -36,8 +36,8 @@ public class Prosthetics : MonoBehaviour
     public float speed=0.01f;
     public int isMoving = 0;
     public bool graspStatus=false;
-    public Object Script;
-    public TrashCan Script2;
+    public Object Object;
+    public TrashCan Door;//change type to gameobject
     public int Score =0;
     public bool graspStatusRef = false;
     public bool graspStatusChange = false;
@@ -144,7 +144,7 @@ public class Prosthetics : MonoBehaviour
             isMoving = 0;
         }
 
-        if (isMoving == 1 & Script.stayInGraspDomain == 1 & !Script2.InTrashCan)
+        if (isMoving == 1 & Object.stayInGraspDomain == 1 /*& !Door.InTrashCan*/)
         {
             graspStatus = true;
             //robot.transform.position = Vector3.MoveTowards(robot.transform.position, target.transform.position + new Vector3(-0.01f, 0.060f, 0.2f), speed);
@@ -154,12 +154,12 @@ public class Prosthetics : MonoBehaviour
             graspStatus = false;
         }
 
-        if (isMoving == 1 & Script.stayInGraspDomain == 1) 
+        if (isMoving == 1 & Object.stayInGraspDomain == 1) 
         {
             robot.transform.position = Vector3.MoveTowards(robot.transform.position, target.transform.position + new Vector3(-0.01f,0.060f,0.2f), speed);
         }
 
-        if (Script2.InTrashCan & vlxFloat4 < 60 & gameTimer > 0f)
+        if (Door.InTrashCan & vlxFloat4 < 60 & gameTimer > 0f)
         {
             robot.transform.position = new Vector3(Random.Range(-1.0f,2.0f), -0.05f, Random.Range(0.5f,-0.5f));
             Score += 1;

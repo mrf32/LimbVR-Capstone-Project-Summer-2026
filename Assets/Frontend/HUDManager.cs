@@ -11,6 +11,8 @@ public class HUDManager : MonoBehaviour
     public GameObject gameplayHUDContainer;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI scoreText;
+    public float timer;
+    public Animator animator;
 
     [Header("Result Screen HUD Elements")]
     public GameObject resultScreenContainer;
@@ -18,7 +20,7 @@ public class HUDManager : MonoBehaviour
     public TextMeshProUGUI backendStatsText;
 
     //Local variables for timer and state
-    private float timeRemaining = 121f;
+    private float timeRemaining;
     private int currentScore = 0;
     private bool isGameActive = false;
 
@@ -29,7 +31,8 @@ public class HUDManager : MonoBehaviour
         startScreenContainer.SetActive(true);
         gameplayHUDContainer.SetActive(false);
         resultScreenContainer.SetActive(false);
-
+        //animator = GetComponent<Animator>();
+        animator.SetInteger("State", 0);
         UpdateScoreDisplay();
     }
 
@@ -49,27 +52,33 @@ public class HUDManager : MonoBehaviour
 
         if (!isGameActive) return; //Prevents timer from starting 
 
-        //Timer and end of timer state change
-        if (timeRemaining > 0)
+        if (isGameActive)
         {
-            timeRemaining -= Time.deltaTime;
-            UpdateTimerDisplay(timeRemaining);
+            //Timer and end of timer state change
+            if (timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+                UpdateTimerDisplay(timeRemaining);
+            }
+            else
+            {
+                timeRemaining = 0;
+                UpdateTimerDisplay(timeRemaining);
+                EndSession();
+            }
         }
-        else
-        {
-            timeRemaining = 0;
-            UpdateTimerDisplay(timeRemaining);
-            EndSession();
-        }
+
+        
     }
 
     //Start Game Button
     public void StartGame()
     {
         isGameActive  = true;
-
+        timeRemaining = timer;
         startScreenContainer.SetActive(false);
         gameplayHUDContainer.SetActive(true);
+        animator.SetInteger("State", 1);
     }
 
     //Score
@@ -102,6 +111,8 @@ public class HUDManager : MonoBehaviour
         gameplayHUDContainer.SetActive(false);
         resultScreenContainer.SetActive(true);
 
+        animator.SetInteger("State", 2);
+
         finalScoreText.text = "Final Score: " + currentScore + " Doors";
 
         //string mockBackendLogs = "PROSTHETIC REHAB LOGS:\n" + 
@@ -119,8 +130,24 @@ public class HUDManager : MonoBehaviour
 
     public void RestartGame()
     {
+        isGameActive = true;
+        timeRemaining = timer;
+        startScreenContainer.SetActive(false);
+        resultScreenContainer.SetActive(false);
+        gameplayHUDContainer.SetActive(true);
+        animator.SetInteger("State", 1);
+        /*
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
+        */
+    }
+
+    public void BackToMenu()
+    {
+        startScreenContainer.SetActive(true);
+        gameplayHUDContainer.SetActive(false);
+        resultScreenContainer.SetActive(false);
+        animator.SetInteger("State", 0);
     }
 
 
