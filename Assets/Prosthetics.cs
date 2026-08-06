@@ -115,7 +115,7 @@ public class Prosthetics : MonoBehaviour
         target.transform.Translate(0, translation_h, 0);
 
         // Rotate around our y-axis
-        visualMeshChild.Rotate(0, -rotation, 0);
+        visualMeshChild.Rotate(0, 0, rotation);
 
 
 
