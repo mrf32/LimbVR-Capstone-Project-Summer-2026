@@ -7,21 +7,33 @@ using System.IO.Ports;
 
 public class Prosthetics : MonoBehaviour
 {
-    private readonly KeyCode[] loggingKeys = new KeyCode[]
+    private struct LoggingAction
     {
-        KeyCode.Space,
-        KeyCode.W,
-        KeyCode.A,
-        KeyCode.S,
-        KeyCode.D,
-        KeyCode.UpArrow,
-        KeyCode.DownArrow,
-        KeyCode.LeftArrow,
-        KeyCode.RightArrow,
-        KeyCode.Q,
-        KeyCode.E,
-        KeyCode.F,
-        KeyCode.G
+        public KeyCode Key;
+        public string ActionName;
+
+        public LoggingAction(KeyCode key, string actionName)
+        {
+            Key = key;
+            ActionName = actionName;
+        }
+    }
+
+    private readonly LoggingAction[] loggingActions = new LoggingAction[]
+    {
+        new LoggingAction(KeyCode.Space, "grasp"),
+        new LoggingAction(KeyCode.W, "move up"),
+        new LoggingAction(KeyCode.A, "move left"),
+        new LoggingAction(KeyCode.S, "move down"),
+        new LoggingAction(KeyCode.D, "move right"),
+        new LoggingAction(KeyCode.UpArrow, "move up"),
+        new LoggingAction(KeyCode.DownArrow, "move down"),
+        new LoggingAction(KeyCode.LeftArrow, "move left"),
+        new LoggingAction(KeyCode.RightArrow, "move right"),
+        new LoggingAction(KeyCode.Q, "left rotation"),
+        new LoggingAction(KeyCode.E, "right rotation"),
+        new LoggingAction(KeyCode.F, "left rotation"),
+        new LoggingAction(KeyCode.G, "right rotation")
     };
 
     public SerialPort serial = new SerialPort("\\\\.\\COM3", 115200);
@@ -185,17 +197,17 @@ public class Prosthetics : MonoBehaviour
     }
     void CheckLoggingInput()
     {
-        foreach (KeyCode key in loggingKeys)
+        foreach (LoggingAction action in loggingActions)
         {
-            if (Input.GetKeyDown(key))
+            if (Input.GetKeyDown(action.Key))
             {
-                writeData();
+                writeData(action.ActionName);
                 return;
             }
         }
     }
 
-    void writeData()
+    void writeData(string actionName)
     {
         string directoryName = Path.GetDirectoryName(pathName);
         if (!string.IsNullOrEmpty(directoryName))
@@ -205,10 +217,11 @@ public class Prosthetics : MonoBehaviour
 
         using (StreamWriter file = new StreamWriter(pathName, true))
         {
-            string output = string.Format("{0},{1},{2},{3}", timer, vlxFloat3,vlxFloat4, Score);
+            string output = string.Format("{0},{1},{2},{3},{4}", timer, vlxFloat3, vlxFloat4, Score, actionName);
             file.WriteLine(output);
             file.Close();
         }
     }
 }
+
 
