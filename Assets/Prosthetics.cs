@@ -80,6 +80,7 @@ public class Prosthetics : MonoBehaviour
 
         gameTimer -= Time.deltaTime;
         timer += Time.deltaTime;
+        CheckLoggingInput();
         // Debug.Log(Score);
 
 
@@ -115,7 +116,8 @@ public class Prosthetics : MonoBehaviour
         target.transform.Translate(0, translation_h, 0);
 
         // Rotate around our y-axis
-        visualMeshChild.Rotate(0, 0, -rotation);
+        visualMeshChild.Rotate(0, 0, rotation);
+
 
 
         // Debug.Log(Score);
@@ -168,7 +170,7 @@ public class Prosthetics : MonoBehaviour
 
         }
 
-        if (Door.InTrashCan & vlxFloat4 < 60 & gameTimer > 0f)
+        if (Door != null && Door.InTrashCan && vlxFloat4 < 60 && gameTimer > 0f)
         {
             robot.transform.position = new Vector3(Random.Range(-1.0f,2.0f), -0.05f, Random.Range(0.5f,-0.5f));
             Score += 1;
@@ -176,7 +178,6 @@ public class Prosthetics : MonoBehaviour
             Instantiate(spherePrefab, randomSpawnPosition, Quaternion.identity);
         }
 
-        CheckLoggingInput();
 
         if (gameTimer > 0f)
         {
@@ -221,3 +222,4 @@ public class Prosthetics : MonoBehaviour
         }
     }
 }
+
