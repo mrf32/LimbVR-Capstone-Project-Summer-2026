@@ -6,11 +6,11 @@ public class Object : MonoBehaviour
     private HUDManager manager;
 
     [SerializeField] private GameObject doorPrefab;
-    [SerializeField] private GameObject keyPrefab;
 
     public int stayInGraspDomain = 0;
 
     private bool unlocking;
+
 
     private void Awake()
     {
@@ -20,6 +20,8 @@ public class Object : MonoBehaviour
         {
             Debug.LogError("No HUDManager found in the scene.");
         }
+
+        
     }
 
     private void OnTriggerStay(Collider other)
@@ -38,6 +40,7 @@ public class Object : MonoBehaviour
         }
     }
 
+    
     private void OnTriggerEnter(Collider other)
     {
         if (unlocking || !other.CompareTag("Handle"))
@@ -53,11 +56,6 @@ public class Object : MonoBehaviour
             return;
         }
 
-        if (doorPrefab == null || keyPrefab == null)
-        {
-            Debug.LogError("Door prefab or Key prefab is not assigned.");
-            return;
-        }
 
         unlocking = true;
 
@@ -77,18 +75,20 @@ public class Object : MonoBehaviour
 
         doorAnimator.SetTrigger("Open");
 
+        /*
         Collider keyCollider = GetComponent<Collider>();
 
         if (keyCollider != null)
         {
             keyCollider.enabled = false;
         }
+        */
 
         // Wait one frame so the Animator can process the trigger.
         yield return null;
 
         // Wait until the OpenDoor state begins.
-        while (!doorAnimator.GetCurrentAnimatorStateInfo(0).IsName("OpenDoor"))
+        while (!doorAnimator.GetCurrentAnimatorStateInfo(0).IsName("DoorOpen"))
         {
             yield return null;
         }
@@ -108,19 +108,19 @@ public class Object : MonoBehaviour
         Vector3 keyPosition = transform.position;
         Quaternion keyRotation = transform.rotation;
 
+        /*
         Instantiate(
-            doorPrefab,
-            doorPosition,
-            doorRotation
+            doorPrefab
         );
 
         Instantiate(
-            keyPrefab,
-            keyPosition,
-            keyRotation
+            keyPrefab
         );
+        */
+
 
         Destroy(doorObject);
         Destroy(gameObject);
     }
+    
 }

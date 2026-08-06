@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6203061384220728509, guid: 710019a81bf75694dba64278039f256d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.355
+      value: 4.861
       objectReference: {fileID: 0}
     - target: {fileID: 6203061384220728509, guid: 710019a81bf75694dba64278039f256d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6203061384220728509, guid: 710019a81bf75694dba64278039f256d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 36.2717
+      value: 36.293
       objectReference: {fileID: 0}
     - target: {fileID: 6203061384220728509, guid: 710019a81bf75694dba64278039f256d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6727924682044671495, guid: 710019a81bf75694dba64278039f256d, type: 3}
       propertyPath: m_TagString
-      value: Object
+      value: Key
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -87,11 +87,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 482fe94a446cdd24da63e333d8695723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Object
-  manager: {fileID: 0}
+  doorPrefab: {fileID: 3451904406100983185, guid: 8abba6566952aa04eb64c0199773baf6, type: 3}
   stayInGraspDomain: 0
-  Door: {fileID: 0}
-  Key: {fileID: 1078693340516196834}
-  DoorAnimator: {fileID: 0}
 --- !u!54 &6372347196888245861
 Rigidbody:
   m_ObjectHideFlags: 0

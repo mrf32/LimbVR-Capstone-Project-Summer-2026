@@ -159,16 +159,19 @@ public class Prosthetics : MonoBehaviour
             robot.transform.position = Vector3.MoveTowards(robot.transform.position, target.transform.position + new Vector3(-0.01f,0.060f,0.2f), speed);
         }
 
-        if (Door.InTrashCan & vlxFloat4 < 60 & gameTimer > 0f)
+        /*
+        if (Door.InTrashCan & vlxFloat4 < 60 & gameTimer > 0f) // Door variable named changed from another previous name affecting original trash bin game
         {
             robot.transform.position = new Vector3(Random.Range(-1.0f,2.0f), -0.05f, Random.Range(0.5f,-0.5f));
-            Score += 1;
+            //Score += 1;
             Vector3 randomSpawnPosition = new Vector3(Random.Range(-0.5f, 0.2f), 0, Random.Range(1.06f, 1.75f));
-            Instantiate(spherePrefab, randomSpawnPosition, Quaternion.identity);
+            //Instantiate(spherePrefab, randomSpawnPosition, Quaternion.identity);
         }
+        */
 
         CheckLoggingInput();
 
+        /*
         if (gameTimer > 0f)
         {
             timerText.text = "Time Left: " + Mathf.Floor(gameTimer);
@@ -180,7 +183,7 @@ public class Prosthetics : MonoBehaviour
         }
 
         scoreText.text = "Score: " + Mathf.Floor(Score);
-
+        */
 
     }
     void CheckLoggingInput()
