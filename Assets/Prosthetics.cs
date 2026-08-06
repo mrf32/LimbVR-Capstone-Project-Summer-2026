@@ -80,6 +80,7 @@ public class Prosthetics : MonoBehaviour
 
         gameTimer -= Time.deltaTime;
         timer += Time.deltaTime;
+        CheckLoggingInput();
         // Debug.Log(Score);
 
 
@@ -115,7 +116,7 @@ public class Prosthetics : MonoBehaviour
         target.transform.Translate(0, translation_h, 0);
 
         // Rotate around our y-axis
-        visualMeshChild.Rotate(0, -rotation, 0);
+        visualMeshChild.Rotate(0, 0, rotation);
 
 
 
@@ -154,9 +155,19 @@ public class Prosthetics : MonoBehaviour
             graspStatus = false;
         }
 
-        if (isMoving == 1 & Object.stayInGraspDomain == 1) 
+
+        if (isMoving == 1 && Object.stayInGraspDomain == 1 && target != null) 
         {
-            robot.transform.position = Vector3.MoveTowards(robot.transform.position, target.transform.position + new Vector3(-0.01f,0.060f,0.2f), speed);
+
+            Transform gripAnchor = target.transform.Find("Grip_Anchor");
+            
+            if(gripAnchor != null){
+                robot.transform.position = Vector3.MoveTowards(robot.transform.position, gripAnchor.position, speed);
+            }
+            else{
+                robot.transform.position = Vector3.MoveTowards(robot.transform.position, target.transform.position, speed);
+            }
+
         }
 
         /*
@@ -169,7 +180,6 @@ public class Prosthetics : MonoBehaviour
         }
         */
 
-        CheckLoggingInput();
 
         /*
         if (gameTimer > 0f)
@@ -186,6 +196,7 @@ public class Prosthetics : MonoBehaviour
         */
 
     }
+
     void CheckLoggingInput()
     {
         foreach (KeyCode key in loggingKeys)
@@ -214,3 +225,4 @@ public class Prosthetics : MonoBehaviour
         }
     }
 }
+
