@@ -77,6 +77,8 @@ public class HUDManager : MonoBehaviour
     {
         isGameActive  = true;
         timeRemaining = timer;
+        ResetScore();
+        UpdateScoreDisplay();
         startScreenContainer.SetActive(false);
         gameplayHUDContainer.SetActive(true);
         gameController.ResetHand();
@@ -90,6 +92,12 @@ public class HUDManager : MonoBehaviour
         if (!isGameActive) return;
         currentScore += 1;
         UpdateScoreDisplay();
+    }
+
+    //Reset Score
+    public void ResetScore()
+    {
+        currentScore = 0;
     }
 
     //Timer function
@@ -114,7 +122,7 @@ public class HUDManager : MonoBehaviour
         gameplayHUDContainer.SetActive(false);
         resultScreenContainer.SetActive(true);
         gameController.ResetHand();
-        gameController.GenerateNewKey();
+        gameController.DestroyLeftOverKeys();
         gameController.GenerateNewDoor();
 
         animator.SetInteger("State", 2);
@@ -138,11 +146,14 @@ public class HUDManager : MonoBehaviour
     {
         isGameActive = true;
         timeRemaining = timer;
+        ResetScore();
+        UpdateScoreDisplay();
         startScreenContainer.SetActive(false);
         resultScreenContainer.SetActive(false);
         gameplayHUDContainer.SetActive(true);
         animator.SetInteger("State", 1);
         gameController.ResetHand();
+        gameController.DestroyLeftOverKeys();
         gameController.GenerateNewKey();
         gameController.GenerateNewDoor();
         /*

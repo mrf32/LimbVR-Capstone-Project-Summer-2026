@@ -15,3 +15,609 @@
 5.29864,0,0,0
 5.404706,0,0,0
 5.510632,0,0,0
+9.370983,0,0,0,move left
+1.977655,0,0,0,move right
+2.416694,0,0,0,move left
+3.087471,0,0,0,move left
+3.416979,0,0,0,grasp
+3.873653,0,0,0,move up
+4.186842,0,0,0,grasp
+4.795121,0,0,0,move right
+5.02344,0,0,0,grasp
+5.34282,0,0,0,move up
+5.512117,0,0,0,grasp
+5.890143,0,0,0,move left
+6.69942,0,0,0,move right
+7.276284,0,0,0,grasp
+7.595643,0,0,0,move left
+7.778543,0,0,0,grasp
+8.330043,0,0,0,move left
+8.501367,0,0,0,grasp
+8.785858,0,0,0,move left
+9.309518,0,0,0,move right
+10.01725,0,0,0,move left
+10.27044,0,0,0,grasp
+10.47385,0,0,0,move left
+10.89229,0,0,0,move right
+11.24239,0,0,0,move left
+11.60062,0,0,0,move right
+12.12631,0,0,0,grasp
+12.26104,0,0,0,move left
+12.58783,0,0,0,move right
+12.93887,0,0,0,move left
+13.23634,0,0,0,grasp
+13.39091,0,0,0,move right
+13.489,0,0,0,move left
+13.60848,0,0,0,grasp
+13.98177,0,0,0,move right
+14.76037,0,0,0,move left
+15.18849,0,0,0,move left
+15.41496,0,0,0,grasp
+15.61315,0,0,0,move left
+16.11052,0,0,0,move right
+16.52844,0,0,0,move left
+17.0455,0,0,0,move left
+17.28511,0,0,0,move right
+17.51213,0,0,0,move left
+17.80938,0,0,0,grasp
+17.8281,0,0,0,move left
+17.93503,0,0,0,move left
+1.928935,0,0,0,move right
+2.385454,0,0,0,move left
+3.137885,0,0,0,move left
+3.540076,0,0,0,grasp
+4.05592,0,0,0,move right
+4.30259,0,0,0,move right
+4.409112,0,0,0,move right
+4.62454,0,0,0,move right
+4.876073,0,0,0,move up
+5.09666,0,0,0,grasp
+5.509751,0,0,0,move right
+6.286704,0,0,0,move right
+6.519407,0,0,0,move up
+9.368235,0,0,0,move left
+10.33416,0,0,0,move right
+10.65557,0,0,0,move up
+10.91802,0,0,0,move left
+11.33706,0,0,0,move up
+11.63446,0,0,0,grasp
+12.04831,0,0,0,move left
+13.01597,0,0,0,move right
+15.1615,0,0,0,move left
+15.53089,0,0,0,move left
+16.00532,0,0,0,grasp
+16.31093,0,0,0,move left
+17.13827,0,0,0,move right
+17.9893,0,0,0,move right
+19.19913,0,0,0,grasp
+19.4946,0,0,0,move left
+20.19503,0,0,0,move right
+21.2389,0,0,0,grasp
+21.51735,0,0,0,move left
+22.07844,0,0,0,move right
+22.74233,0,0,0,move left
+23.19362,0,0,0,move left
+23.46071,0,0,0,grasp
+23.63348,0,0,0,move left
+23.96757,0,0,0,move right
+24.31954,0,0,0,move left
+24.45991,0,0,0,grasp
+24.78739,0,0,0,move right
+25.30651,0,0,0,move left
+25.57845,0,0,0,move right
+25.97239,0,0,0,move left
+25.97844,0,0,0,grasp
+26.38489,0,0,0,move right
+27.02065,0,0,0,grasp
+27.26857,0,0,0,move left
+27.6762,0,0,0,move right
+28.49901,0,0,0,grasp
+29.06272,0,0,0,move right
+29.58784,0,0,0,move left
+30.4561,0,0,0,move down
+30.88378,0,0,0,grasp
+31.07673,0,0,0,move right
+31.7127,0,0,0,move left
+32.21074,0,0,0,move left
+32.63827,0,0,0,move left
+33.04866,0,0,0,move left
+33.69445,0,0,0,move left
+33.95475,0,0,0,move up
+34.27436,0,0,0,grasp
+34.55697,0,0,0,move right
+35.52519,0,0,0,move right
+35.74657,0,0,0,move up
+37.43688,0,0,0,move left
+37.78123,0,0,0,move left
+38.73191,0,0,0,move left
+39.46999,0,0,0,move right
+39.76175,0,0,0,move right
+40.16103,0,0,0,move right
+40.39037,0,0,0,move up
+40.61777,0,0,0,grasp
+40.90677,0,0,0,move right
+41.81249,0,0,0,move up
+42.60123,0,0,0,move down
+43.15847,0,0,0,move down
+43.44009,0,0,0,grasp
+43.62088,0,0,0,move up
+44.33997,0,0,0,move down
+46.45358,0,0,0,move left
+47.05914,0,0,0,move left
+47.44023,0,0,0,move up
+47.69919,0,0,0,move right
+47.95427,0,0,0,move right
+48.24806,0,0,0,grasp
+48.44049,0,0,0,move right
+48.93998,0,0,0,move right
+49.32792,0,0,0,move right
+49.86634,0,0,0,move left
+50.29214,0,0,0,move right
+50.61182,0,0,0,move left
+51.65075,0,0,0,grasp
+51.80988,0,0,0,move right
+52.22668,0,0,0,move left
+52.97511,0,0,0,move right
+83.87936,0,0,0,move left
+84.45714,0,0,0,move left
+84.67535,0,0,0,move up
+84.95995,0,0,0,grasp
+85.22469,0,0,0,move right
+85.498,0,0,0,move left
+85.84863,0,0,0,grasp
+86.12005,0,0,0,move right
+86.61487,0,0,0,move up
+86.81377,0,0,0,grasp
+86.98431,0,0,0,move right
+87.54907,0,0,0,move left
+87.84976,0,0,0,move down
+88.07712,0,0,0,grasp
+88.34048,0,0,0,move right
+89.05821,0,0,0,move right
+89.45971,0,0,0,move right
+89.68253,0,0,0,move right
+90.18474,0,0,0,move left
+90.38329,0,0,0,move up
+90.62281,0,0,0,grasp
+90.95998,0,0,0,move up
+93.79452,0,0,0,move down
+94.03829,0,0,0,move left
+94.67029,0,0,0,move left
+95.0468,0,0,0,move up
+95.3317,0,0,0,grasp
+95.61348,0,0,0,move right
+96.57108,0,0,0,move left
+98.47162,0,0,0,move left
+98.86513,0,0,0,move left
+99.42709,0,0,0,move left
+99.76088,0,0,0,move up
+99.94962,0,0,0,grasp
+100.1922,0,0,0,move right
+100.9978,0,0,0,move up
+103.332,0,0,0,move down
+103.8173,0,0,0,move left
+104.4122,0,0,0,move up
+104.8228,0,0,0,move up
+105.1021,0,0,0,move left
+105.3291,0,0,0,move up
+105.5616,0,0,0,grasp
+105.7514,0,0,0,move left
+106.1378,0,0,0,move right
+106.7622,0,0,0,grasp
+106.962,0,0,0,move left
+107.2989,0,0,0,move right
+107.9192,0,0,0,move left
+108.219,0,0,0,grasp
+108.4082,0,0,0,move left
+108.8214,0,0,0,move right
+109.5398,0,0,0,grasp
+109.7696,0,0,0,move right
+110.135,0,0,0,grasp
+110.3729,0,0,0,move right
+110.8569,0,0,0,move left
+111.8974,0,0,0,move left
+112.4396,0,0,0,move left
+112.7176,0,0,0,grasp
+112.9223,0,0,0,move right
+113.7544,0,0,0,move up
+117.8854,0,0,0,move left
+118.2755,0,0,0,move right
+118.5325,0,0,0,move right
+118.809,0,0,0,move up
+119.091,0,0,0,grasp
+119.1122,0,0,0,move right
+119.2235,0,0,0,move right
+119.6452,0,0,0,move left
+126.8906,0,0,0,move left
+127.5672,0,0,0,move left
+127.9584,0,0,0,move up
+128.1768,0,0,0,grasp
+128.4004,0,0,0,move right
+128.6935,0,0,0,move left
+129.1839,0,0,0,move right
+129.5685,0,0,0,move right
+129.807,0,0,0,move up
+130.0464,0,0,0,grasp
+130.3604,0,0,0,move right
+131.1682,0,0,0,move up
+131.4025,0,0,0,grasp
+133.897,0,0,0,move left
+134.7899,0,0,0,move up
+134.9766,0,0,0,grasp
+135.21,0,0,0,move right
+136.2274,0,0,0,move up
+138.5966,0,0,0,move left
+139.1323,0,0,0,move left
+139.5143,0,0,0,move right
+139.8211,0,0,0,move right
+140.2863,0,0,0,move right
+140.5325,0,0,0,move up
+140.8282,0,0,0,grasp
+141.0907,0,0,0,move right
+141.8738,0,0,0,move up
+142.1724,0,0,0,move left
+148.2679,0,0,0,move left
+149.004,0,0,0,move left
+149.5153,0,0,0,move left
+149.8653,0,0,0,move up
+150.2368,0,0,0,grasp
+150.533,0,0,0,move right
+151.3219,0,0,0,move right
+151.5685,0,0,0,move up
+154.561,0,0,0,move left
+155.331,0,0,0,move left
+155.6972,0,0,0,move up
+155.8843,0,0,0,grasp
+156.1438,0,0,0,move right
+156.9475,0,0,0,move right
+157.2244,0,0,0,move up
+159.9628,0,0,0,move left
+160.6169,0,0,0,move left
+161.0083,0,0,0,move right
+161.7262,0,0,0,move up
+162.0122,0,0,0,grasp
+162.4252,0,0,0,move right
+163.1198,0,0,0,move right
+163.4797,0,0,0,move left
+163.8393,0,0,0,move up
+252.4732,0,0,0,move left
+253.1646,0,0,0,move left
+253.4574,0,0,0,move right
+253.8165,0,0,0,move up
+253.9707,0,0,0,grasp
+254.265,0,0,0,move right
+254.8152,0,0,0,move up
+2.892907,0,0,0,move left
+3.573301,0,0,0,move left
+3.931332,0,0,0,move up
+4.101678,0,0,0,move right
+4.545855,0,0,0,move left
+5.118874,0,0,0,grasp
+5.308671,0,0,0,move right
+5.981247,0,0,0,move up
+8.750403,0,0,0,move left
+9.495984,0,0,0,move right
+9.795306,0,0,0,move up
+9.963086,0,0,0,grasp
+10.22302,0,0,0,move right
+11.15514,0,0,0,move up
+13.89631,0,0,0,move left
+14.66762,0,0,0,move right
+15.04241,0,0,0,move right
+15.20409,0,0,0,move up
+15.32582,0,0,0,grasp
+15.52129,0,0,0,move right
+16.15117,0,0,0,move up
+16.48529,0,0,0,move left
+16.84881,0,0,0,move down
+17.51325,0,0,0,move down
+17.87033,0,0,0,move down
+18.15053,0,0,0,grasp
+18.25503,0,0,0,move up
+20.52735,0,0,0,move left
+21.11144,0,0,0,move left
+21.71296,0,0,0,move right
+22.16821,0,0,0,move up
+22.32101,0,0,0,move right
+22.60561,0,0,0,grasp
+22.74561,0,0,0,move right
+23.83019,0,0,0,move right
+24.19228,0,0,0,move up
+24.70346,0,0,0,move up
+27.33197,0,0,0,move left
+28.47564,0,0,0,move left
+29.14126,0,0,0,move right
+29.41971,0,0,0,move up
+29.65892,0,0,0,grasp
+30.15611,0,0,0,move right
+30.83424,0,0,0,left rotation
+31.55845,0,0,0,move right
+32.42041,0,0,0,move down
+33.1226,0,0,0,move down
+34.38127,0,0,0,left rotation
+34.90881,0,0,0,left rotation
+35.32174,0,0,0,move right
+36.19614,0,0,0,move left
+36.3386,0,0,0,move right
+36.82219,0,0,0,move left
+37.2468,0,0,0,move left
+37.77313,0,0,0,move left
+38.10162,0,0,0,move up
+38.73698,0,0,0,move down
+39.35715,0,0,0,move up
+40.04242,0,0,0,move left
+41.01442,0,0,0,move right
+41.94859,0,0,0,grasp
+42.27555,0,0,0,move right
+42.77909,0,0,0,move left
+43.94293,0,0,0,left rotation
+44.80732,0,0,0,left rotation
+45.27803,0,0,0,move down
+45.72437,0,0,0,move up
+45.93822,0,0,0,grasp
+46.27094,0,0,0,move down
+46.73489,0,0,0,move up
+47.10341,0,0,0,move right
+47.48383,0,0,0,move right
+48.08988,0,0,0,move up
+53.55526,0,0,0,move left
+54.26237,0,0,0,move right
+54.58965,0,0,0,move up
+54.76729,0,0,0,grasp
+55.22373,0,0,0,move left
+55.57778,0,0,0,grasp
+55.78942,0,0,0,move right
+56.53988,0,0,0,move right
+56.96798,0,0,0,move up
+57.45803,0,0,0,grasp
+86.60056,0,0,0,move up
+89.1415,0,0,0,move left
+91.2618,0,0,0,move right
+92.92382,0,0,0,move down
+95.01377,0,0,0,left rotation
+96.19573,0,0,0,right rotation
+97.25117,0,0,0,left rotation
+133.423,0,0,0,move left
+134.2931,0,0,0,move left
+134.518,0,0,0,move up
+134.7589,0,0,0,grasp
+135.0622,0,0,0,move right
+135.9439,0,0,0,move right
+136.2746,0,0,0,move up
+5.071219,0,0,0,move left
+5.654966,0,0,0,move left
+6.035756,0,0,0,move right
+6.20189,0,0,0,move right
+6.455938,0,0,0,move right
+6.947262,0,0,0,move up
+7.241377,0,0,0,grasp
+7.772583,0,0,0,move right
+8.712435,0,0,0,move up
+11.44842,0,0,0,move left
+12.38284,0,0,0,move up
+12.65743,0,0,0,grasp
+13.10011,0,0,0,move left
+13.38941,0,0,0,grasp
+13.60013,0,0,0,move right
+14.38411,0,0,0,move up
+17.11223,0,0,0,move left
+18.11733,0,0,0,move up
+18.30449,0,0,0,grasp
+18.51656,0,0,0,move right
+19.17387,0,0,0,move up
+21.53268,0,0,0,move left
+22.43328,0,0,0,move left
+22.58971,0,0,0,move up
+22.83105,0,0,0,grasp
+23.19403,0,0,0,move right
+26.27039,0,0,0,move left
+26.91971,0,0,0,move up
+27.04679,0,0,0,grasp
+27.56586,0,0,0,move left
+27.75309,0,0,0,grasp
+27.91964,0,0,0,move right
+28.55666,0,0,0,move up
+31.44979,0,0,0,move left
+31.99644,0,0,0,move up
+32.17606,0,0,0,move right
+32.33002,0,0,0,grasp
+32.63331,0,0,0,move right
+32.84399,0,0,0,move up
+33.29622,0,0,0,move left
+33.5461,0,0,0,move down
+34.40083,0,0,0,move left
+34.68036,0,0,0,move up
+34.84752,0,0,0,grasp
+35.04099,0,0,0,move left
+35.30045,0,0,0,move up
+130.4493,0,0,0,move left
+131.4207,0,0,0,move left
+131.6265,0,0,0,move up
+131.9314,0,0,0,grasp
+132.4555,0,0,0,move up
+132.6018,0,0,0,grasp
+132.7833,0,0,0,move right
+133.8022,0,0,0,move up
+136.8015,0,0,0,move left
+137.8667,0,0,0,move left
+138.082,0,0,0,move up
+138.2543,0,0,0,grasp
+138.4408,0,0,0,move right
+139.3442,0,0,0,move up
+141.7641,0,0,0,move left
+142.7732,0,0,0,move left
+142.9994,0,0,0,move up
+143.1526,0,0,0,grasp
+144.0093,0,0,0,move right
+144.5664,0,0,0,move right
+147.5245,0,0,0,move left
+148.4805,0,0,0,move right
+148.8164,0,0,0,move up
+149.0368,0,0,0,grasp
+149.2238,0,0,0,move right
+150.0942,0,0,0,move up
+153.0126,0,0,0,move left
+153.7807,0,0,0,move left
+154.0062,0,0,0,move up
+154.1799,0,0,0,grasp
+154.3517,0,0,0,move up
+155.7362,0,0,0,move down
+156.8996,0,0,0,move right
+157.0929,0,0,0,move left
+157.2031,0,0,0,move up
+157.3429,0,0,0,move right
+157.4504,0,0,0,move left
+157.5149,0,0,0,move down
+157.585,0,0,0,move right
+157.7009,0,0,0,move up
+157.7651,0,0,0,move left
+157.91,0,0,0,move down
+157.9372,0,0,0,move right
+158.0554,0,0,0,move up
+158.0655,0,0,0,move left
+158.1769,0,0,0,move right
+159.8016,0,0,0,move left
+160.7038,0,0,0,move up
+160.926,0,0,0,grasp
+161.1461,0,0,0,move right
+162.143,0,0,0,move right
+162.375,0,0,0,move up
+165.5644,0,0,0,move left
+166.3487,0,0,0,move right
+166.7659,0,0,0,move up
+166.9744,0,0,0,grasp
+167.1355,0,0,0,move right
+167.7564,0,0,0,move up
+168.0701,0,0,0,move left
+168.2739,0,0,0,move down
+170.5826,0,0,0,move left
+171.3058,0,0,0,move right
+171.5713,0,0,0,move up
+171.7432,0,0,0,grasp
+171.8945,0,0,0,move right
+172.7868,0,0,0,move up
+175.4825,0,0,0,move left
+176.5088,0,0,0,move up
+176.6582,0,0,0,grasp
+176.852,0,0,0,move right
+177.5125,0,0,0,move up
+180.2448,0,0,0,move left
+180.9557,0,0,0,move left
+181.1865,0,0,0,move up
+181.3164,0,0,0,grasp
+181.5052,0,0,0,move right
+182.1521,0,0,0,move up
+184.8762,0,0,0,move left
+185.5536,0,0,0,move left
+185.7776,0,0,0,move up
+185.8839,0,0,0,grasp
+186.0238,0,0,0,move right
+186.6079,0,0,0,move up
+189.4497,0,0,0,move left
+190.1881,0,0,0,move up
+190.3588,0,0,0,grasp
+190.485,0,0,0,move right
+191.1073,0,0,0,move up
+193.8402,0,0,0,move left
+194.8034,0,0,0,move left
+195.0676,0,0,0,move up
+195.1715,0,0,0,grasp
+195.2937,0,0,0,move right
+195.8509,0,0,0,move up
+198.6606,0,0,0,move left
+199.3029,0,0,0,move left
+199.5331,0,0,0,move up
+199.8011,0,0,0,move right
+199.9109,0,0,0,grasp
+200.1668,0,0,0,move right
+200.9446,0,0,0,move right
+201.188,0,0,0,move up
+203.7079,0,0,0,move left
+204.993,0,0,0,move right
+205.119,0,0,0,move up
+205.2311,0,0,0,grasp
+205.4733,0,0,0,move right
+205.987,0,0,0,move up
+208.466,0,0,0,move left
+209.0949,0,0,0,move left
+209.3089,0,0,0,move up
+209.4127,0,0,0,grasp
+209.5434,0,0,0,move right
+210.0948,0,0,0,move up
+210.4107,0,0,0,move left
+213.0772,0,0,0,move left
+213.5742,0,0,0,move up
+213.7192,0,0,0,grasp
+214.2423,0,0,0,move up
+214.3843,0,0,0,move left
+216.7395,0,0,0,move left
+217.3054,0,0,0,move up
+217.3613,0,0,0,move right
+217.3733,0,0,0,grasp
+217.8204,0,0,0,move left
+218.3136,0,0,0,grasp
+218.3798,0,0,0,move right
+218.9607,0,0,0,move up
+219.1367,0,0,0,move left
+219.7953,0,0,0,move down
+220.0072,0,0,0,move right
+220.6494,0,0,0,move left
+221.0343,0,0,0,move up
+221.2585,0,0,0,move left
+222.5745,0,0,0,move right
+222.7907,0,0,0,move up
+223.0264,0,0,0,grasp
+223.1905,0,0,0,move up
+223.2849,0,0,0,move left
+225.6989,0,0,0,move left
+226.5597,0,0,0,move up
+226.7282,0,0,0,grasp
+226.883,0,0,0,move right
+227.7638,0,0,0,move up
+230.3372,0,0,0,move left
+231.1273,0,0,0,move up
+231.3559,0,0,0,move right
+231.5911,0,0,0,grasp
+231.8073,0,0,0,move right
+232.5898,0,0,0,grasp
+232.7089,0,0,0,move right
+233.164,0,0,0,move up
+233.3849,0,0,0,move left
+236.8273,0,0,0,move left
+237.4877,0,0,0,move left
+237.7073,0,0,0,move up
+237.927,0,0,0,move right
+237.9858,0,0,0,grasp
+238.4981,0,0,0,move right
+239.2344,0,0,0,move right
+239.4179,0,0,0,move up
+239.7555,0,0,0,move left
+240.2828,0,0,0,move right
+240.3084,0,0,0,move down
+240.9375,0,0,0,move down
+240.9749,0,0,0,move left
+241.5411,0,0,0,move left
+241.8197,0,0,0,grasp
+241.97,0,0,0,move up
+244.1807,0,0,0,move left
+244.983,0,0,0,move left
+245.2271,0,0,0,move up
+245.4229,0,0,0,grasp
+245.6639,0,0,0,move right
+245.9644,0,0,0,move left
+246.2957,0,0,0,move up
+246.5312,0,0,0,grasp
+246.7604,0,0,0,move right
+247.5079,0,0,0,move right
+247.7336,0,0,0,move up
+257.5778,0,0,0,move left
+258.2777,0,0,0,move left
+258.4824,0,0,0,move up
+258.6959,0,0,0,grasp
+258.8756,0,0,0,move right
+259.1897,0,0,0,move left
+259.6626,0,0,0,move up
+259.8229,0,0,0,grasp
+260.0235,0,0,0,move right
+260.8391,0,0,0,move right
+261.0564,0,0,0,move up

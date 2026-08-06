@@ -52,9 +52,9 @@ public class GameController : MonoBehaviour
         );
     }
 
-    public void GenerateNewKey()
+    public void DestroyLeftOverKeys()
     {
-        if (keys.Length > 1)
+        if (keys.Length > 0)
         {
             foreach (GameObject key in keys)
             {
@@ -62,17 +62,18 @@ public class GameController : MonoBehaviour
             }
 
         }
-        else if (keys.Length == 0)
+    }
+
+    public void GenerateNewKey()
+    {
+        if (keyPrefab == null)
         {
-            if (keyPrefab == null)
-            {
-                Debug.LogError("Key prefab is not assigned.");
-                return;
-            }
-            //assign current copy to prosthetic
-            Instantiate(keyPrefab);
-            //AssignToProsthetic();
+            Debug.LogError("Key prefab is not assigned.");
+            return;
         }
+        //assign current copy to prosthetic
+        //Instantiate(keyPrefab);
+        AssignToProsthetic();
     }
 
     public GameObject AssignToProsthetic()
@@ -110,5 +111,10 @@ public class GameController : MonoBehaviour
         AssignToProsthetic();
         Instantiate(doorPrefab);
         ResetHand();
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
