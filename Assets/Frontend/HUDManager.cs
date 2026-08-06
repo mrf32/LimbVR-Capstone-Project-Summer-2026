@@ -13,6 +13,7 @@ public class HUDManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public float timer;
     public Animator animator;
+    public GameController gameController;
 
     [Header("Result Screen HUD Elements")]
     public GameObject resultScreenContainer;
@@ -78,6 +79,8 @@ public class HUDManager : MonoBehaviour
         timeRemaining = timer;
         startScreenContainer.SetActive(false);
         gameplayHUDContainer.SetActive(true);
+        gameController.ResetHand();
+        gameController.GenerateNewKey();
         animator.SetInteger("State", 1);
     }
 
@@ -110,6 +113,9 @@ public class HUDManager : MonoBehaviour
 
         gameplayHUDContainer.SetActive(false);
         resultScreenContainer.SetActive(true);
+        gameController.ResetHand();
+        gameController.GenerateNewKey();
+        gameController.GenerateNewDoor();
 
         animator.SetInteger("State", 2);
 
@@ -136,6 +142,9 @@ public class HUDManager : MonoBehaviour
         resultScreenContainer.SetActive(false);
         gameplayHUDContainer.SetActive(true);
         animator.SetInteger("State", 1);
+        gameController.ResetHand();
+        gameController.GenerateNewKey();
+        gameController.GenerateNewDoor();
         /*
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
